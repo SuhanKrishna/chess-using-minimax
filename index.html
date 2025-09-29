@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Chess AI</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <section class="sidebar-section">
+                <h2>Game Controls</h2>
+                <button id="new-game-btn">New Game</button>
+            </section>
+            <section class="sidebar-section">
+                <h3>Game Status</h3>
+                <p id="status-text">Your turn (White)</p>
+            </section>
+            <section class="sidebar-section">
+                <h3>AI Statistics</h3>
+                <div class="stats-grid">
+                    <div class="metric"><label>Nodes Evaluated</label><p id="nodes-evaluated">0</p></div>
+                    <div class="metric"><label>Nodes Pruned</label><p id="nodes-pruned">0</p></div>
+                    <div class="metric"><label>Search Depth</label><p>3</p></div>
+                    <div class="metric"><label>Move Time (ms)</label><p id="move-time">0</p></div>
+                </div>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <h1>Chess AI</h1>
+            <div class="board-container">
+                <div id="chess-board"></div>
+            </div>
+            <p id="last-move-text"></p>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
